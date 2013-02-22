@@ -10,4 +10,8 @@ try {
 if (hasCoffee) {
   var CoffeeClass = SandboxedModule.load('../fixture/coffeeClass').exports;
   assert.strictEqual(new CoffeeClass().simpleData(), 2);
+
+  var CoffeeClass = SandboxedModule.load('../fixture/coffeeClass', {BASE: 5}).exports;
+  assert.strictEqual(new CoffeeClass().basedData(), 6);
+
 }
